@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin:0px;
+        
+}
+input {
+    text-align: right;
+}
+    </style>
+    <body>
+        <h1>Income Tax Calculator</h1>
+        <h2>Prince Paul Misa</h2>
+
+        <br>
+        <label for userIn>Input Your Income</label>
+        <input id="userIn" type="number">
+ 
+        </select>
+        <br><br>
+        <label for="Output">Taxable Income is</label>
+        <input id="Output" type="text" readonly>
+        <button id="Enter" onclick ="convert()">Enter</button>
+        <br><a href="index.html">Back to Index</a><br><br>
+    </body>
+    <script>
+        function convert(){
+            let output = document.getElementById('Output')
+            let y = 0
+            let userInput = document.getElementById('userIn').value
+            if (userInput>=8000000){
+                userInput= 2410000 +(userInput-8000000)*0.35
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=2000000){
+                userInput= 490000 +(userInput-2000000)*0.32
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=800000){
+                userInput= 130000 +(userInput-800000)*0.3
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=400000){
+                userInput= 30000 +(userInput-400000)*0.25
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else if (userInput>=250000){
+                userInput= (userInput-250000)*0.20
+                output.value='₱'+userInput.toFixed(2)
+            }
+            else
+            {
+                userInput= 0
+                output.value='₱'+userInput.toFixed(2)
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin:0px;
+        
+}
+input {
+    text-align: right;
+}
+    </style>
+    <body>
+        <h1>Conversion Calculator</h1>
+        <h2>Prince Paul Misa</h2>
+
+        <br>
+        <label for userIn>Input Your Value</label>
+        <input id="userIn" type="number">
+        <select id="item">
+            <option value="Fahrenheit">Celsius to Fahrenheit</option>
+            <option value="Celsius">Fahrenheit to Celsius</option>
+            <option value="Meter">Feet to Meter</option>
+            <option value="Feet">Meter to Feet</option>
+        </select>
+        <br><br>
+        <input id="Output" type="text" readonly>
+        <button id="Enter" onclick ="convert()">Enter</button>
+        <br><a href="index.html">Back to Index</a><br><br>
+    </body>
+    <script>
+        function convert(){
+            let option = document.getElementById('item').value
+            let output = document.getElementById('Output')
+            let userInput = document.getElementById('userIn').value
+            if (option =="Fahrenheit"){
+                userInput = userInput*9/5 + 32
+                output.value=userInput.toFixed(0)+"°F"
+            }
+            else if (option =="Celsius"){
+                userInput = (userInput-32)*5/9
+                output.value=userInput.toFixed(0)+"°C"
+            }
+            else if (option =="Meter"){
+                userInput *=0.3048
+                output.value=userInput.toFixed(0)+" Meters"
+            }
+            else if (option =="Feet"){
+                userInput *=3.2808
+                output.value=userInput.toFixed(0)+" Feet"
+            }
+        }
+    </script>
+</html>

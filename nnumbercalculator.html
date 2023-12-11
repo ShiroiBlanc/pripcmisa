@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin:0px;
+        
+}
+input {
+    text-align: right;
+}
+#OutputA, #OutputB, #OutputC{
+    width:50%;
+    margin-top:1%;
+    text-align: center;
+}
+    </style>
+    <body>
+        <h1>N Numbers Calculator</h1>
+        <h2>Prince Paul Misa</h2>
+
+        <br>
+        <label for userIn>Input N</label><br>
+        <input id="userIn" type="number"><br>
+        <button id="Enter" onclick ="convert()">Enter</button>
+
+        <br><br>
+        <input id="OutputA" type="text" readonly><br>
+        <input id="OutputB" type="text" readonly><br>
+        <input id="OutputC" type="text" readonly>
+
+        <br><a href="index.html">Back to Index</a><br><br>
+    </body>
+    <script>
+        function fact(x){
+            let y=x 
+            while(y>1)
+            {
+                y--;
+                x*=y
+            }
+            return x;
+        }
+        function summ(x){
+            let y=x 
+            do{
+                y--;
+                x+=y;
+            }while(y>1)
+            return x;
+        }
+        function ave(x){
+            let z=0
+            for(let y=x;y>0;y--){
+                z+=y
+            }
+            return z/x;
+        }
+        function convert(){
+            let outputA = document.getElementById('OutputA')
+            let outputB = document.getElementById('OutputB')
+            let outputC = document.getElementById('OutputC')
+
+            let userInput = document.getElementById('userIn').value*1
+
+            outputA.value = "Factorial of N is " +fact(userInput)
+            outputB.value = "Summation of first N numbers is " +summ(userInput)
+            outputC.value = "Average of first N numbers is " +ave(userInput)
+            
+        }
+    </script>
+</html>
